@@ -1,0 +1,45 @@
+@use "variables";
+@use "initial";
+
+@mixin card($url) {
+    width: 288px;
+    height: 160px;
+    color: variables.$White;
+    padding: 20px;
+    background: {
+        image: url($url);
+        repeat: no-repeat;
+        size: contain;
+    };
+    @media (min-width: 1440px){
+        width: 450px;
+        height: 247px;
+        padding: 30px;
+    }
+    
+}
+
+@mixin card-position($m-top, $m-left, $d-top, $d-left){
+    position: absolute;
+    top: $m-top;
+    left: $m-left;
+    @media (min-width: 1440px){
+        top: $d-top;
+        left: $d-left;
+    }
+}
+
+@mixin button(){
+    background-color: variables.$Very-dark-violet;
+        color: variables.$Light-grayish-violet;
+        width: 100%;
+        height: 50px;
+        border-radius: 8px;
+        font-size: 1em;
+        letter-spacing: 1px;
+        font-family: variables.$font ;
+        &:hover{
+            cursor: pointer;
+        }
+}
+
